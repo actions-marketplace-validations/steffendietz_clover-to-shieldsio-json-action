@@ -1,0 +1,19 @@
+{
+  "name": "clover-to-shieldsio-json-action",
+  "version": "1.0.0",
+  "description": "Generates a ShieldsIO endpoint compatible JSON file containing the code coverage from a clover.xml",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Steffen Dietz",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "xml-js": "^1.6.11"
+  }
+}
