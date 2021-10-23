@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Generates a ShieldsIO endpoint compatible JSON file containing the code coverage from a clover.xml",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "ncc build index.js --license licenses.txt --minify",
     "test": "echo \"Error: no test specified\" && exit 1"

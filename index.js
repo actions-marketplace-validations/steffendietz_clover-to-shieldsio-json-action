@@ -1,17 +1,15 @@
-import { getInput, setFailed } from '@actions/core';
-import { context } from '@actions/github';
+const core = require('@actions/core')
+const xmljs = require('xml-js')
+const fs = require('fs')
+const path = require('path')
 
-import { xml2js } from 'xml-js';
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
-import path from 'path';
-
-const storeData = (data, path) => {
+const storeData = (data, fileName) => {
     try {
-        const dirname = path.dirname(path)
-        if (!existsSync(dirname)) {
-            mkdirSync(dirname, { recursive: true })
+        const dirName = path.dirname(fileName)
+        if (!fs.existsSync(dirName)) {
+            fs.mkdirSync(dirName, { recursive: true })
         }
-        writeFileSync(path, JSON.stringify(data))
+        fs.writeFileSync(fileName, JSON.stringify(data))
     } catch (err) {
         console.error(err)
     }
@@ -22,23 +20,23 @@ const preparePath = (relativePath) => {
 }
 
 try {
-    const pathToClover = getInput('path-to-clover');
-    const pathToShieldsIoJson = getInput('path-to-json');
+    const pathToClover = core.getInput('path-to-clover');
+    const pathToShieldsIoJson = core.getInput('path-to-json');
 
-    const style = getInput('style');
-    const labelText = getInput('label-text');
+    const style = core.getInput('style');
+    const labelText = core.getInput('label-text');
     // thresholds
-    const badThreshold = getInput('bad-threshold');
-    const averageThreshold = getInput('average-threshold');
-    const aboveAverageThreshold = getInput('above-average-threshold');
+    const badThreshold = core.getInput('bad-threshold');
+    const averageThreshold = core.getInput('average-threshold');
+    const aboveAverageThreshold = core.getInput('above-average-threshold');
     // colors
-    const badColor = getInput('bad-color');
-    const averageColor = getInput('average-color');
-    const aboveAverageColor = getInput('above-average-color');
-    const goodColor = getInput('good-color');
+    const badColor = core.getInput('bad-color');
+    const averageColor = core.getInput('average-color');
+    const aboveAverageColor = core.getInput('above-average-color');
+    const goodColor = core.getInput('good-color');
 
-    const xml = readFileSync(preparePath(pathToClover))
-    const conversionResult = xml2js(xml, { compact: true })
+    const xml = fs.readFileSync(preparePath(pathToClover))
+    const conversionResult = xmljs.xml2js(xml, { compact: true })
 
     const coverageMetrics = conversionResult.coverage.project.metrics
 
@@ -66,5 +64,5 @@ try {
 
     console.log(shieldsIoBadge);
 } catch (error) {
-    setFailed(error.message);
+    core.setFailed(error.message);
 }
