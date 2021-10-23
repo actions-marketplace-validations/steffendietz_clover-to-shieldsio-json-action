@@ -21,36 +21,61 @@ The badge generated based on the resulting JSON file could look something like t
 
 ## Inputs
 
-## `path-to-clover`
+### `path-to-clover`
+
+**required**
+
 Relative path from repository root to clover.xml.
-Default: `clover.xml`
-## `path-to-json`
+Defaults to: `clover.xml`
+
+### `path-to-json`
+
+**required**
+
 Relative path from repository root where ShieldsIO endpoint JSON is created.
-Default: `shieldsio.json`
-## `label-text`
+Defaults to: `shieldsio.json`
+
+### `label-text`
+
 The left text of the badge; empty to omit left side.
-Default: `coverage`
-## `style`
+Defaults to: `coverage`
+
+### `style`
+
 The badge style.
-Default: `flat`
-## `bad-threshold`
-Below this coverage percent, the color will be bad-color.
-Default: `50`
-## `average-threshold`
-Below this coverage percent, the color will be average-color.
-Default: `75`
-## `above-average-threshold`
-Below this coverage percent, the color will be above-average-color.
-Default: `95`
-## `bad-color`
+Defaults to: `flat`
+
+### `bad-threshold`
+
+Below this coverage percent, the color will be `bad-color`.
+Defaults to: `50`
+
+### `average-threshold`
+
+Below this coverage percent, the color will be `average-color`.
+Defaults to: `75`
+
+### `above-average-threshold`
+
+Below this coverage percent, the color will be `above-average-color`.
+Defaults to: `95`
+
+### `bad-color`
+
 The color used for bad code coverage.
-Default: `red`
-## `average-color`
+Defaults to: `red`
+
+### `average-color`
+
 The color used for average code coverage.
-Default: `yellow`
-## `above-average-color`
+Defaults to: `yellow`
+
+### `above-average-color`
+
 The color used for above average code coverage.
-Default: `green`
-## `good-color`
+Defaults to: `green`
+
+### `good-color`
+
 The color used for good code coverage.
-Default: `brightgreen`
+Defaults to: `brightgreen`

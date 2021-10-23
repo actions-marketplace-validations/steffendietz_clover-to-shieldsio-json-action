@@ -3,9 +3,11 @@ description: 'Generates a ShieldsIO endpoint compatible JSON file containing the
 inputs:
   path-to-clover:
     description: 'Relative path from repository root to clover.xml'
+    required: true
     default: 'clover.xml'
   path-to-json:
     description: 'Relative path from repository root where ShieldsIO endpoint JSON is created'
+    required: true
     default: 'shieldsio.json'
   label-text:
     description: 'The left text of the badge; empty to omit left side'
