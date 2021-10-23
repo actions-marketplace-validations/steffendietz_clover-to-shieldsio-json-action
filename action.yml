@@ -35,5 +35,5 @@ inputs:
     description: 'The color used for good code coverage'
     default: 'brightgreen'
 runs:
-  using: 'node16'
+  using: 'node12'
   main: 'dist/index.js'
