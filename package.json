@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Steffen Dietz",
-  "license": "ISC",
+  "author": "Steffen Dietz <ich@steffendietz.de> (https://steffendietz.de)",
+  "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",

@@ -42,13 +42,13 @@ try {
 
     const codeCoveragePercent = ((coverageMetrics._attributes.coveredstatements / coverageMetrics._attributes.statements) * 100).toFixed(2)
 
-    let color = goodColor
-    if (codeCoveragePercent < aboveAverageThreshold) {
+    let color = badColor
+    if (codeCoveragePercent >= aboveAverageThreshold) {
+        color = goodColor
+    } else if (codeCoveragePercent >= averageThreshold) {
         color = aboveAverageColor
-    } else if (codeCoveragePercent < averageThreshold) {
+    } else if (codeCoveragePercent >= badThreshold) {
         color = averageColor
-    } else if (codeCoveragePercent < badThreshold) {
-        color = badColor
     }
 
     const shieldsIoBadge = {
