@@ -1,5 +1,6 @@
 name: 'Clover to ShieldsIO endpoint JSON'
 description: 'Generates a ShieldsIO endpoint compatible JSON file containing the code coverage from a clover.xml'
+author: 'Steffen Dietz'
 inputs:
   path-to-clover:
     description: 'Relative path from repository root to clover.xml'
@@ -39,3 +40,6 @@ inputs:
 runs:
   using: 'node12'
   main: 'dist/index.js'
+branding:
+  icon: 'umbrella'  
+  color: 'green'
