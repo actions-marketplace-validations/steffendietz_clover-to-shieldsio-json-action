@@ -55,14 +55,13 @@ try {
         schemaVersion: 1,
         label: labelText,
         message: codeCoveragePercent + '%',
-        "color": color,
+        color,
+        // this is here so that the color can not be overridden
         isError: true,
-        style: style
+        style
     }
 
     storeData(shieldsIoBadge, preparePath(pathToShieldsIoJson))
-
-    console.log(shieldsIoBadge);
 } catch (error) {
     core.setFailed(error.message);
 }
