@@ -11,34 +11,43 @@ inputs:
     required: true
     default: 'shieldsio.json'
   label-text:
-    description: 'The left text of the badge; empty to omit left side'
+    description: 'The left text of the badge; leave empty to omit left side'
+    required: false
     default: 'coverage'
   style:
     description: 'The badge style'
+    required: false
     default: 'flat'
   bad-threshold:
     description: 'Below this coverage percent, the color will be bad-color'
-    default: 50
+    required: false
+    default: '50'
   average-threshold:
     description: 'Below this coverage percent, the color will be average-color'
-    default: 75
+    required: false
+    default: '75'
   above-average-threshold:
     description: 'Below this coverage percent, the color will be above-average-color'
-    default: 95
+    required: false
+    default: '95'
   bad-color:
     description: 'The color used for bad code coverage'
+    required: false
     default: 'red'
   average-color:
     description: 'The color used for average code coverage'
+    required: false
     default: 'yellow'
   above-average-color:
     description: 'The color used for above average code coverage'
+    required: false
     default: 'green'
   good-color:
     description: 'The color used for good code coverage'
+    required: false
     default: 'brightgreen'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   icon: 'umbrella'  

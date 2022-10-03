@@ -1,4 +1,2 @@
 .devcontainer
 node_modules
-clover.xml
-shieldsio.json
